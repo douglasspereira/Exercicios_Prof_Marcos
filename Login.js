@@ -27,4 +27,4 @@ function realizarLogin(usuario, senha) {
     }
   }
 }
-realizarLogin("joão", "senha");
+realizarLogin("joão", "1234");
