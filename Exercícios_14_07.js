@@ -14,9 +14,9 @@
 // O aluno que tiver a maior media deverá aparecer em destaque caso ele tenha sido aprovado.
 
 
-    let alunos = [
+let alunos = [
         {aluno: "Douglas", "media": 0, idMedia: "a1media", idNota1: "a1nota1", idNota2: "a1nota2", idNota3: "a1nota3"},
-        {aluno: "Paulo", "media": 0, idMedia: "a2media", idNota1: "a2nota1", idNota2: "a2nota2", idNota3: "a3nota3"},
+        {aluno: "Paulo", "media": 0, idMedia: "a2media", idNota1: "a2nota1", idNota2: "a2nota2", idNota3: "a2nota3"},
         {aluno: "João", "media": 0, idMedia: "a3media", idNota1: "a3nota1", idNota2: "a3nota2", idNota3: "a3nota3"},
         {aluno: "Roberto", "media": 0, idMedia: "a4media", idNota1: "a4nota1", idNota2: "a4nota2", idNota3: "a4nota3"},
         {aluno: "Anderson", "media": 0, idMedia: "a5media", idNota1: "a5nota1", idNota2: "a5nota2", idNota3: "a5nota3"},
@@ -33,21 +33,36 @@
         {aluno: "Maicon", "media": 0, idMedia: "a14media", idNota1: "a14nota1", idNota2: "a14nota2", idNota3: "a14nota3"},
         {aluno: "Karina", "media": 0, idMedia: "a15media", idNota1: "a15nota1", idNota2: "a15nota2", idNota3: "a15nota3"}
     ]
-    
+
 function calcularMedia() {
-    for (let i = 0; i < 2; i++) {
-        console.log(alunos[i].idMedia);
-        document.getElementById(alunos[i].idMedia).value = (parseFloat(document.getElementById(alunos[i].idNota1).value) + 
-        parseFloat(document.getElementById(alunos[i].idNota2).value) + parseFloat(document.getElementById(alunos[i].idNota3).value)) / 3;
+    var inputMedia;
+    var nota1;
+    var nota2;
+    var nota3;
+
+    for (let i = 0; i < alunos.length; i++) {
+        inputMedia = document.getElementById(alunos[i].idMedia);
+        nota1 = parseFloat(document.getElementById(alunos[i].idNota1).value);
+        nota2 = parseFloat(document.getElementById(alunos[i].idNota2).value);
+        nota3 = parseFloat(document.getElementById(alunos[i].idNota3).value);
+        inputMedia.value = (nota1 + nota2 + nota3) / 3;
     }
+
+
+        // for (let i = 0; i < alunos.length; i++) {
+        //     inputMedia = document.getElementById(alunos[i].idMedia);
+        //     nota1 = Number(document.getElementById(alunos[i].idNota1).value);
+        //     nota2 = Number(document.getElementById(alunos[i].idNota2).value);
+        //     nota3 = Number(document.getElementById(alunos[i].idNota3).value);
+        //     inputMedia.value = (nota1 + nota2 + nota3) / 3;
+        // }
 }
 
-function notaMax() {
-    let maximo = 0;
-    for (let i = 0; i < alunos.lenght; i++) {
-        if (alunos[i].media > maximo) {
-            maximo = alunos[i].media;
-        }
-    }
-    document.getElementById("notaAlta").value = maximo;
-}
+
+// function calcularMedia() {
+//     for (let i = 0; i < alunos.length; i++) {
+//         console.log(alunos[i].idMedia);
+//         document.getElementById(alunos[i].idMedia).value = (parseFloat(document.getElementById(alunos[i].idNota1).value) + 
+//         parseFloat(document.getElementById(alunos[i].idNota2).value) + parseFloat(document.getElementById(alunos[i].idNota3).value)) / 3;
+//     }
+// }
